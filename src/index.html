@@ -9,11 +9,73 @@
   <meta name="title" content="Financial Calculator">
   <meta name="description" content="Web Application that enables you to calculate all of your financial needs.">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
   <!-- inject:css -->
   <link rel="stylesheet" href="./styles.css">
   <!-- endinject -->
 </head>
 <body>
-  <h1>Financial Calculator</h1>
+  <main class="main-container">
+    <section>
+      <h1 class="main-title">Financial Calculators</h1>
+    </section>
+    <section class="calculator-display">
+      <h3 class="calculator-title">Return on Investment</h3>
+      <form class="calculator-form">
+        <div class="input-text">
+          <label for="invested">Amount Invested</label>
+          <input id="invested" type="text" placeholder="$1000.00">
+        </div>
+        <div class="input-text">
+          <label for="returned">Amount Returned</label>
+          <input id="returned" type="text" placeholder="$2500.00">
+        </div>
+        <div class="input-text">
+          <label for="invested">Investment Length</label>
+          <input id="invested" type="text" placeholder="2.5">
+        </div>
+      </form>
+    </section>
+    <section class="select-calculator">
+      <h2 class="select-calculator-title">Calculators</h2>
+      <div class="calculators-display">
+        <div class="calculator-item">
+          <i class="fas fa-home fa-7x"></i>
+          <div class="calculator-item-title">
+            <h3>Mortgage</h3>
+          </div>
+        </div>
+        <div class="calculator-item">
+          <i class="fas fa-piggy-bank fa-7x"></i>
+          <div class="calculator-item-title">
+            <h3>Loan</h3>
+          </div>
+        </div>
+        <div class="calculator-item">
+          <i class="fas fa-table fa-7x"></i>
+          <div class="calculator-item-title">
+            <h3>Interest</h3>
+          </div>
+        </div>
+        <div class="calculator-item">
+          <i class="fas fa-chart-line fa-7x"></i>
+          <div class="calculator-item-title">
+            <h3>ROI</h3>
+          </div>
+        </div>
+        <div class="calculator-item">
+          <i class="fas fa-money-check-alt fa-7x"></i>
+          <div class="calculator-item-title">
+            <h3>Salary</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Built & Designed by <a href="https://www.linkedin.com/in/marko-karapandzic-1aaa81130" target="_blank" rel="noopener">Marko Karapandzic</a></p>
+  </footer>
 </body>
 </html>

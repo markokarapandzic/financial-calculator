@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --clr-background: #7CAC78;
+  --clr-title: black;
+  --clr-light-gray: #707070;
+  --clr-light-gray-background: #E9E9E9;
+  --clr-green-finance: #3E9C35;
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 2vw;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: var(--clr-background);
+  color: var(--clr-light-gray);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+button {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: 0.25rem;
+  text-transform: capitalize;
+  line-height: 1.25;
+  font-weight: 500;
+  color: var(--clr-title);
+}
+
+h1 {
+  font-size: 3.75rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
+h3 {
+  font-size: 3.2rem;
+}
+
+h4 {
+  font-size: 2.5rem;
+}
+
+p {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-light);
+  font-weight: 400;
+}
+
+input[type="text"] {
+  height: 4rem;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 3px 6px 0px rgba(0,0,0,0.25);
+  padding: 0 10px;
+}
+
+/* Custom Classes START */
+.main-container {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  padding: 5%;
+  text-align: center;
+}
+
+.main-title {
+  margin-bottom: 2rem;
+}
+
+/* Calculator Display Section */
+.calculator-display {
+  height: auto;
+  widows: 100%;
+  background-color: var(--clr-light-gray-background);
+  border-radius: 1rem;
+  box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.25);
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+
+.calculator-title {
+  margin-bottom: 3rem;
+}
+
+.calculator-form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 5%;
+}
+
+.calculator-form > *:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.input-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-text label {
+  font-size: 1.75rem;
+}
+
+/* Select Calculator Section */
+.calculators-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.calculators-display > *:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.select-calculator-title {
+  margin-bottom: 2rem;
+}
+
+.calculator-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 5% 8%;
+  border-radius: 2rem;
+  box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.25);
+  width: 250px;
+}
+
+.calculator-item i {
+  flex: 1;
+  color: var(--clr-green-finance);
+  margin-right: 10px;
+}
+
+.calculator-item-title {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculator-item-title h3 {
+  font-weight: 300;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+}
+
+.footer a {
+  color: black;
+}
+
+.footer a:hover {
+  opacity: 0.3;
+}
