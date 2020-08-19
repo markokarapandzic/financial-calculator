@@ -106,10 +106,15 @@ input[type="text"] {
   padding: 20px;
   border: none;
   box-shadow: 5px 5px 10px 0 rgba(0,0,0,0.25);
+  transition: background-color 0.1s ease-in;
 }
 
 .fab-calculate i {
   color: white;
+}
+
+.fab-calculate:active {
+  background-color: var(--clr-background);
 }
 
 .btn-calculate {
@@ -193,6 +198,11 @@ input[type="text"] {
   border-radius: 2rem;
   box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.25);
   width: 250px;
+  transition: background-color 0.1s ease-in;
+}
+
+.calculator-item:active {
+  background-color: var(--clr-light-gray-background);
 }
 
 .calculator-description {
@@ -283,9 +293,6 @@ input[type="text"] {
   
   p {
     font-size: 0.5rem;
-    margin-bottom: 1.25rem;
-    color: var(--clr-grey-light);
-    font-weight: 400;
   }
 
   input[type="text"] {
@@ -348,6 +355,7 @@ input[type="text"] {
     border: none;
     border-radius: 0.25rem;
     box-shadow: 5px 5px 10px 0 rgba(0,0,0,0.25);
+    transition: background-color 0.1s ease-in;
   }
 
   .btn-calculate p {
@@ -355,6 +363,10 @@ input[type="text"] {
     font-size: 0.75rem;
     font-weight: 600;
     color: white;
+  }
+
+  .btn-calculate:hover {
+    background-color: var(--clr-background);
   }
 
   /* Select Calculator Section */
@@ -396,6 +408,12 @@ input[type="text"] {
     box-shadow: 5px 5px 10px 0 rgba(0,0,0,0.25);
     border-radius: 1rem;
     padding: 10px 0.75rem;
+    transition: background-color 0.1s ease-in;
+  }
+
+  .calculator-item-title:hover {
+    cursor: pointer;
+    background-color: var(--clr-light-gray-background);
   }
 
   .calculator-description {
@@ -418,5 +436,43 @@ input[type="text"] {
 
   .footer p {
     margin: 0;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1rem;
+  }
+  
+  h3 {
+    font-size: 0.75rem;
+  }
+  
+  h4 {
+    font-size: 0.5rem;
+  }
+
+  p {
+    font-size: 0.4rem;
+  }
+
+  input[type="text"] {
+    font-size: 0.5rem;
+  }
+
+  .input-text label {
+    font-size: 0.5rem;
+  }
+
+  .main-container {
+    margin: 2% 5%;
+  }
+
+  .calculator-display {
+    height: 20rem;
   }
 }
