@@ -6,6 +6,7 @@
   --clr-light-gray: #707070;
   --clr-light-gray-background: #E9E9E9;
   --clr-green-finance: #3E9C35;
+  --modal-max-width: 620px;
 }
 
 *,
@@ -94,6 +95,62 @@ input[type="text"] {
   border-radius: 1rem;
   box-shadow: 0 3px 6px 0px rgba(0,0,0,0.25);
   padding: 0 10px;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(73, 166, 233, 0.5);
+  display: grid;
+  place-items: center;
+  visibility: hidden;
+  z-index: -10;
+}
+
+.modal-container {
+  background-color: white;
+  border-radius: 1rem;
+  width: 90vw;
+  height: auto;
+  padding: 20px;
+  max-width: var(--modal-max-width);
+  text-align: center;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.open-modal {
+  visibility: visible;
+  z-index: 10;
+}
+
+.btn-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20rem;
+  height: 5rem;
+  background-color: var(--clr-green-finance);
+  border: none;
+  border-radius: 0.25rem;
+  box-shadow: 5px 5px 10px 0 rgba(0,0,0,0.25);
+  transition: background-color 0.1s ease-in;
+}
+
+.btn-modal p {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+}
+
+.btn-modal:hover {
+  background-color: var(--clr-background);
 }
 
 /* Floating Action Button */
@@ -302,6 +359,15 @@ input[type="text"] {
     width: 10rem;
   }
 
+  .btn-modal {
+    width: 8rem;
+    height: 2.5rem;
+  }
+
+  .btn-modal p {
+    font-size: 0.75rem;
+  }
+
   .fab-calculate {
     display: none;
   }
@@ -320,7 +386,7 @@ input[type="text"] {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin: 5%;
+    margin: 2% 5%;
     background-color: white;
     border-radius: 1.5rem;
     box-shadow: 20px 20px 15px 0 rgba(0,0,0,0.25);
