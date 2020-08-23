@@ -97,8 +97,8 @@ const RETURN_ON_INVESTMENT_HTML = `
     <input id="returned" type="text" placeholder="$2500.00">
   </div>
   <div class="input-text">
-    <label for="invested">Investment Length</label>
-    <input id="invested" type="text" placeholder="2.5">
+    <label for="length">Investment Length</label>
+    <input id="length" type="text" placeholder="2.5">
   </div>
 </form>
 <button class="btn-calculate">
@@ -138,3 +138,22 @@ const SALARY_HTML = `
   <p>Calculate</p>
 </button>
 `;
+
+// Modal Values
+const NO_CALCULATOR_SELECTED = `
+<h3>Result</h3>
+<div class="result"><h4>Please Select a Calculator</h4></div>
+<button class="btn-modal"><p>Close</p></button>
+`;
+
+const returnOnInvestmentResult = (roi, annualizedRoi, gain) => {
+  return `
+    <h3>Result</h3>
+    <div class="result">
+      <h4>Return On Investment: <b>${roi}%</b></h4>
+      <h4>Annualized Return On Investment: <b>${annualizedRoi}%</b></h4>
+      <h4>Gain On Investment: <b>$${gain}</b></h4>
+    </div>
+    <button class="btn-modal"><p>Close</p></button>
+  `;
+};
