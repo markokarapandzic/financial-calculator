@@ -11,11 +11,11 @@ const MORTGAGE_HTML = `
 <form class="calculator-form">
   <div class="input-text">
     <label for="home-price">Home Price</label>
-    <input id="home-price" type="text" placeholder="$300000.00">
+    <input id="home-price" type="text" placeholder="$300,000.00">
   </div>
   <div class="input-text">
-    <label for="returned">Down Payment</label>
-    <input id="down-payment" type="text" placeholder="20%">
+    <label for="down-payment">Down Payment</label>
+    <input id="down-payment" type="text" placeholder="$20,000">
   </div>
   <div class="input-text">
     <label for="term">Loan Term</label>
@@ -60,24 +60,12 @@ const INTEREST_HTML = `
     <input id="principal" type="text" placeholder="$20000.00">
   </div>
   <div class="input-text">
-    <label for="contribution">Annual Contribution</label>
-    <input id="contribution" type="text" placeholder="$5000.00">
-  </div>
-  <div class="input-text">
     <label for="interest">Interest Rate</label>
     <input id="interest" type="text" placeholder="5.00%">
   </div>
   <div class="input-text">
-    <label for="after">After</label>
-    <input id="after" type="text" placeholder="5 years">
-  </div>
-  <div class="input-text">
-    <label for="tax">Tax Rate</label>
-    <input id="tax" type="text" placeholder="0%">
-  </div>
-  <div class="input-text">
-    <label for="inflation">Inflation Rate</label>
-    <input id="inflation" type="text" placeholder="2%">
+    <label for="term">Loan Term</label>
+    <input id="term" type="text" placeholder="5 years">
   </div>
 </form>
 <button class="btn-calculate">
@@ -153,6 +141,48 @@ const returnOnInvestmentResult = (roi, annualizedRoi, gain) => {
       <h4>Return On Investment: <b>${roi}%</b></h4>
       <h4>Annualized Return On Investment: <b>${annualizedRoi}%</b></h4>
       <h4>Gain On Investment: <b>$${gain}</b></h4>
+    </div>
+    <button class="btn-modal"><p>Close</p></button>
+  `;
+};
+
+const mortgageResult = (mortgagePayment) => {
+  return `
+    <h3>Result</h3>
+    <div class="result">
+      <h4>Monthly Mortgage Payments: <b>$${mortgagePayment}</b></h4>
+    </div>
+    <button class="btn-modal"><p>Close</p></button>
+  `;
+};
+
+const loanResult = (interest) => {
+  return `
+    <h3>Result</h3>
+    <div class="result">
+      <h4>Interest on Payment: <b>$${interest}</b></h4>
+    </div>
+    <button class="btn-modal"><p>Close</p></button>
+  `;
+};
+
+const interestResult = (interest) => {
+  return `
+    <h3>Result</h3>
+    <div class="result">
+      <h4>Interest for the Loan: <b>$${interest}</b></h4>
+    </div>
+    <button class="btn-modal"><p>Close</p></button>
+  `;
+};
+
+const salaryResult = (annualSalaryUnadjusted, annualSalaryAdjusted, annualSalaryAdjustedForInflation) => {
+  return `
+    <h3>Result</h3>
+    <div class="result">
+      <h4>Annual Salary Unadjusted: <b>$${annualSalaryUnadjusted}</b></h4>
+      <h4>Annual Salary Adjusted: <b>$${annualSalaryAdjusted}</b></h4>
+      <h4>Annual Salary Adjusted For Inflation: <b>$${annualSalaryAdjustedForInflation}</b></h4>
     </div>
     <button class="btn-modal"><p>Close</p></button>
   `;
