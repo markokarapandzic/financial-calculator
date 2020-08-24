@@ -25,42 +25,16 @@ function minifyCSS() {
     .pipe(dest('dist/'));
 }
 
-// function compressImages() {
-//   return src(['./src/images/*', '!./src/images/favicon.ico'])
-//     .pipe(image())
-//     .pipe(dest('dist/images/'));
-// }
-
-// function moveFaviconFolder() {
-//   return src('./src/images/favicon.ico/*')
-//     .pipe(dest('dist/images/favicon.ico/'));
-// }
-
-// function moveAssets() {
-//   return src('./src/assets/*')
-//     .pipe(dest('dist/assets/'));
-// }
-
-// function moveManifest() {
-//   return src('./src/manifest.webmanifest')
-//     .pipe(dest('dist/'));
-// }
-
-// function moveServiceWorker() {
-//   return src('./src/service-worker.js')
-//     .pipe(uglify())
-//     .pipe(dest('dist/'));
-// }
-
-// function minifyJS() {
-//   return src(['./src/**/*.js', '!./src/service-worker.js'])
-//     .pipe(concat('all.js'))
-//     .pipe(uglify())
-//     .pipe(dest('./dist/'));
-// }
+function minifyJS() {
+  return src(['./src/**/*.js', '!./src/service-worker.js'])
+    .pipe(concat('all.js'))
+    .pipe(uglify())
+    .pipe(dest('./dist/'));
+}
 
 exports.default = series(
   preBuild,
   minifyCSS,
+  minifyJS,
   moveIndexHTML,
 );
