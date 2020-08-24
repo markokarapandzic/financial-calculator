@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
 
   <!-- inject:css -->
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="styles.css">
   <!-- endinject -->
 </head>
 <body>
@@ -21,24 +21,7 @@
       <h1 class="main-title">Financial Calculators</h1>
     </section>
     <section class="calculator-display">
-      <h3 class="calculator-title">Return on Investment</h3>
-      <form class="calculator-form">
-        <div class="input-text">
-          <label for="invested">Amount Invested</label>
-          <input id="invested" type="text" placeholder="$1000.00">
-        </div>
-        <div class="input-text">
-          <label for="returned">Amount Returned</label>
-          <input id="returned" type="text" placeholder="$2500.00">
-        </div>
-        <div class="input-text">
-          <label for="invested">Investment Length</label>
-          <input id="invested" type="text" placeholder="2.5">
-        </div>
-      </form>
-      <button class="btn-calculate">
-        <p>Calculate</p>
-      </button>
+      <h3 class="calculator-title">Select a Calculator</h3>
     </section>
     <section class="select-calculator">
       <div class="select-calculator-title">
@@ -108,6 +91,8 @@
     </div>
   </div>
 
-  <script src="main.js"></script>
+  <script src="/js/constants.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/display-calculators.js"></script>
 </body>
 </html>

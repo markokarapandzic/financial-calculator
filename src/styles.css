@@ -153,6 +153,10 @@ input[type="text"] {
   background-color: var(--clr-background);
 }
 
+.result {
+  margin: 1rem 0;
+}
+
 /* Floating Action Button */
 .fab-calculate {
   position: fixed;
