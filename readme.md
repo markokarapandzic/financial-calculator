@@ -4,12 +4,16 @@
 * Requirements
 * Installation
 * Technologies Used
+* Author
+* License
 
 ### INTRODUCTION
 
 The project enables people to calculate all of there financial needs in one place. You can use several different financial calculators, like Mortgage, Loan, Interest, Return on Investment, and Salary calculators. You can also run the Website on mobile phones.
 
 This project is made with pure HTML, CSS, and JS. There are no Libraries or Frameworks here.
+
+Check out a live version [here](https://financial-calculators.netlify.app/).
 
 ### REQUIREMENTS
 
@@ -48,7 +52,7 @@ Here is a list of technologies used to build this project.
 
 ### AUTHOR
 * **Marko Karapandzic**
-See my other projects on my GitHub account [Profile](https://github.com/markokarapandzic)
-Check out my [Website](https://markokarapandzic.github.io/portfolio-website/)
-## License
+See my other projects on my [GitHub](https://github.com/markokarapandzic) account.
+Check out my [Website](https://markokarapandzic.github.io/portfolio-website/).
+### LICENSE
 No License ¯\_(ツ)_/¯
