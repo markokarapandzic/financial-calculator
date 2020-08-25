@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
+  <title>Financial Calculator</title>
+  <meta name="title" content="Financial Calculator">
+  <meta name="description" content="Web Application that enables you to calculate all of your financial needs.">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="main-container">
+    <section class="title-section">
+      <h1 class="main-title">Financial Calculators</h1>
+    </section>
+    <section class="calculator-display">
+      <h3 class="calculator-title">Select a Calculator</h3>
+    </section>
+    <section class="select-calculator">
+      <div class="select-calculator-title">
+        <h2>Calculators</h2>
+        <p>Calculate all of your financial needs</p>
+      </div>
+      <div class="calculators-display">
+        <div class="calculator-item">
+          <i class="fas fa-home fa-2x"></i>
+          <div class="calculator-item-title">
+            <h3>Mortgage</h3>
+            <p class="calculator-description">The Mortgage Calculator helps estimate the monthly payment due along
+              with other financial costs associated with mortgages.</p>
+          </div>
+        </div>
+        <div class="calculator-item">
+          <i class="fas fa-piggy-bank fa-2x"></i>
+          <div class="calculator-item-title">
+            <h3>Loan</h3>
+            <p class="calculator-description">A Loan Calculator helps estimate monthly payments, interest rates and
+              compounding of your money.</p>
+          </div>
+        </div>
+        <div class="calculator-item">
+          <i class="fas fa-table fa-2x"></i>
+          <div class="calculator-item-title">
+            <h3>Interest</h3>
+            <p class="calculator-description">Interest Calculator can help determine the interest payments and final
+              balances on fixed principal amounts and periodic contributions.</p>
+          </div>
+        </div>
+        <div class="calculator-item">
+          <i class="fas fa-chart-line fa-2x"></i>
+          <div class="calculator-item-title">
+            <h3>ROI</h3>
+            <p class="calculator-description">By using ROI Calculator, calculate how much of your investment is
+              returned to you on a annual rate.</p>
+          </div>
+        </div>
+        <div class="calculator-item">
+          <i class="fas fa-money-check-alt fa-2x"></i>
+          <div class="calculator-item-title">
+            <h3>Salary</h3>
+            <p class="calculator-description">The Salary Calculator converts salary amounts to their corresponding values
+              based on payment frequency.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Built & Designed by <a href="https://www.linkedin.com/in/marko-karapandzic-1aaa81130" target="_blank" rel="noopener">Marko Karapandzic</a></p>
+  </footer>
+
+  <!-- Floating Action Button -->
+  <button class="fab-calculate">
+    <i class="fas fa-calculator fa-4x"></i>
+  </button>
+
+  <!-- Modal -->
+  <div class="modal-overlay">
+    <div class="modal-container">
+      <h3>Result</h3>
+      <div class="result"></div>
+      <button class="btn-modal"><p>Close</p></button>
+    </div>
+  </div>
+
+  <script src="all.js"></script>
+</body>
+</html>

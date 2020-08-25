@@ -1,20 +1,24 @@
+const fs = require('fs');
 const { src, dest, series } = require('gulp');
 const cleanCSS = require('gulp-clean-css');
 const autoprefixer = require('gulp-autoprefixer');
-const image = require('gulp-image');
-const inject = require('gulp-inject');
 const clean = require('gulp-clean');
 const uglify = require('gulp-uglify-es').default;
 const concat = require('gulp-concat');
+const rename = require('gulp-rename');
 
-function preBuild() {
-  return src('./dist/', { read: false })
-    .pipe(clean());
+function preBuild(next) {
+  if (fs.existsSync('./dist')) {
+    return src('./dist/', { read: false })
+      .pipe(clean());
+  } else {
+    return next();
+  }
 }
 
 function moveIndexHTML() {
-  return src('./src/index.html')
-    .pipe(inject(src(['./dist/**/*.css', './dist/**/*.js'], { read: false }), { addRootSlash: true, relative: false }))
+  return src('./src/index-template.html')
+    .pipe(rename('index.html'))
     .pipe(dest('dist/'));
 }
 
