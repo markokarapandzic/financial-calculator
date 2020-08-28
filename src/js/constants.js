@@ -187,3 +187,11 @@ const salaryResult = (annualSalaryUnadjusted, annualSalaryAdjusted, annualSalary
     <button class="btn-modal"><p>Close</p></button>
   `;
 };
+
+const INVALID_INPUT_HTML = `
+<h3>Not valid input!</h3>
+<div class="result">
+<h3>Pleas <b>enter a Value</b> or add a <b>Positive Number</b>.</h3>
+</div>
+<button class="btn-modal"><p>Close</p></button>
+`;

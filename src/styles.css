@@ -97,6 +97,10 @@ input[type="number"] {
   padding: 0 10px;
 }
 
+.invalid-input {
+  border: 2px solid red !important;
+}
+
 /* Modal */
 .modal-overlay {
   position: fixed;
