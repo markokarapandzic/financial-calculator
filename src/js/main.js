@@ -38,18 +38,23 @@ function calculate(selectedCalculator) {
 }
 
 function mortgageCalculation() {
-  const homePrice = document.getElementById('home-price').value;
-  const downPayment = document.getElementById('down-payment').value;
-  const loanTerm = document.getElementById('term').value;
-  const interestRate = document.getElementById('interest').value;
+  const homePrice = document.getElementById('home-price');
+  const downPayment = document.getElementById('down-payment');
+  const loanTerm = document.getElementById('term');
+  const interestRate = document.getElementById('interest');
+  const inputs = [homePrice, downPayment, loanTerm, interestRate];
 
-  const principal = homePrice - downPayment;
-  const monthlyInterestRate = (interestRate / 100) / 12;
-  const numberOfPayments = loanTerm * 12;
+  if (validateInputs(inputs)) {
+    const principal = homePrice.value - downPayment.value;
+    const monthlyInterestRate = (interestRate.value / 100) / 12;
+    const numberOfPayments = loanTerm.value * 12;
 
-  const mortgagePayment = mortgagePaymentCalculation(principal, monthlyInterestRate, numberOfPayments);
+    const mortgagePayment = mortgagePaymentCalculation(principal, monthlyInterestRate, numberOfPayments);
 
-  modalContent.innerHTML = mortgageResult(roundNumber(mortgagePayment));
+    modalContent.innerHTML = mortgageResult(roundNumber(mortgagePayment));
+  } else {
+    modalContent.innerHTML = INVALID_INPUT_HTML;
+  }
 }
 
 function mortgagePaymentCalculation(principal, monthlyInterestRate, numberOfPayments) {
@@ -57,51 +62,73 @@ function mortgagePaymentCalculation(principal, monthlyInterestRate, numberOfPaym
 }
 
 function loanCalculation() {
-  const loanAmount = document.getElementById('amount').value;
-  const loanTerm = document.getElementById('term').value;
-  const interestRate = document.getElementById('interest').value;
+  const loanAmount = document.getElementById('amount');
+  const loanTerm = document.getElementById('term');
+  const interestRate = document.getElementById('interest');
+  const inputs = [loanAmount, loanTerm, interestRate];
 
-  const interest = ((interestRate / 100) / (loanTerm / 12)) * loanAmount;
+  if (validateInputs(inputs)) {
+    const interest = ((interestRate.value / 100) / (loanTerm.value / 12)) * loanAmount.value;
 
-  modalContent.innerHTML = loanResult(interest);
+    modalContent.innerHTML = loanResult(interest);
+  } else {
+    modalContent.innerHTML = INVALID_INPUT_HTML;
+  }
 }
 
 function interestCalculation() {
-  const principal = document.getElementById('principal').value;
-  const interestRate = document.getElementById('interest').value;
-  const loanTerm = document.getElementById('term').value;
+  const principal = document.getElementById('principal');
+  const interestRate = document.getElementById('interest');
+  const loanTerm = document.getElementById('term');
+  const inputs = [principal, interestRate, loanTerm];
 
-  const interest = principal * (interestRate / 100) * loanTerm;
+  if (validateInputs(inputs)) {
+    const interest = principal.value * (interestRate.value / 100) * loanTerm.value;
 
-  modalContent.innerHTML = interestResult(interest);
+    modalContent.innerHTML = interestResult(interest);
+  } else {
+    modalContent.innerHTML = INVALID_INPUT_HTML;
+  }
 }
 
 function returnOnInvestmentCalculation() {
-  const amountInvested = document.getElementById('invested').value;
-  const amountReturned = document.getElementById('returned').value;
-  const investmentLength = document.getElementById('length').value;
-  const gain = amountReturned - amountInvested;
-  const returnOnInvestment = (amountReturned - amountInvested) / amountInvested;
-  const annualizedROI = (Math.pow(1 + returnOnInvestment, 1 / investmentLength) - 1) * 100;
+  const amountInvested = document.getElementById('invested');
+  const amountReturned = document.getElementById('returned');
+  const investmentLength = document.getElementById('length');
+  const inputs = [amountInvested, amountReturned, investmentLength];
 
-  modalContent.innerHTML = returnOnInvestmentResult(returnOnInvestment * 100, roundNumber(annualizedROI), gain);
+  if (validateInputs(inputs)) {
+    const gain = amountReturned.value - amountInvested.value;
+    const returnOnInvestment = (amountReturned.value - amountInvested.value) / amountInvested.value;
+    const annualizedROI = (Math.pow(1 + returnOnInvestment, 1 / investmentLength.value) - 1) * 100;
+
+    modalContent.innerHTML = returnOnInvestmentResult(returnOnInvestment * 100, roundNumber(annualizedROI), gain);
+  } else {
+    modalContent.innerHTML = INVALID_INPUT_HTML;
+  }
 }
 
 function salaryCalculator() {
-  const salaryPerHour = document.getElementById('amount').value;
-  const hoursPerWeek = document.getElementById('hours').value;
-  const daysPerWeek = document.getElementById('days').value;
-  const holidaysPerYear = document.getElementById('holidays').value;
-  const vacationsPerYear = document.getElementById('vacations').value;
-  const inflation = document.getElementById('inflation').value;
-  const workingDaysPerYear = 52 * daysPerWeek;
-  const freeDaysPerYear = parseInt(holidaysPerYear) + parseInt(vacationsPerYear);
+  const salaryPerHour = document.getElementById('amount');
+  const hoursPerWeek = document.getElementById('hours');
+  const daysPerWeek = document.getElementById('days');
+  const holidaysPerYear = document.getElementById('holidays');
+  const vacationsPerYear = document.getElementById('vacations');
+  const inflation = document.getElementById('inflation');
+  const inputs = [salaryPerHour, hoursPerWeek, daysPerWeek, holidaysPerYear, vacationsPerYear, inflation];
 
-  const annualSalaryUnadjusted = salaryPerHour * (hoursPerWeek / daysPerWeek) * workingDaysPerYear;
-  const annualSalaryAdjusted = salaryPerHour * (hoursPerWeek / daysPerWeek) * (workingDaysPerYear - freeDaysPerYear);
-  const annualSalaryAdjustedForInflation = annualSalaryAdjusted * ((100 - inflation) / 100);
+  if (validateInputs(inputs)) {
+    const workingDaysPerYear = 52 * daysPerWeek.value;
+    const freeDaysPerYear = parseInt(holidaysPerYear.value) + parseInt(vacationsPerYear.value);
 
-  modalContent.innerHTML = salaryResult(annualSalaryUnadjusted, annualSalaryAdjusted, annualSalaryAdjustedForInflation);
+    const annualSalaryUnadjusted = salaryPerHour.value * (hoursPerWeek.value / daysPerWeek.value) * workingDaysPerYear;
+    const annualSalaryAdjusted = salaryPerHour.value * (hoursPerWeek.value / daysPerWeek.value) * (workingDaysPerYear - freeDaysPerYear);
+    const annualSalaryAdjustedForInflation = annualSalaryAdjusted * ((100 - inflation.value) / 100);
+
+    modalContent.innerHTML = salaryResult(annualSalaryUnadjusted, annualSalaryAdjusted, annualSalaryAdjustedForInflation);
+  } else {
+    modalContent.innerHTML = INVALID_INPUT_HTML;
+  }
 }
 
 function roundNumber(number) {
